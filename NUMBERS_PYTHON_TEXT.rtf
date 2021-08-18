@@ -1,0 +1,946 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;\f2\fnil\fcharset0 Menlo-Bold;
+\f3\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red25\green28\blue31;\red245\green245\blue245;}
+{\*\expandedcolortbl;;\cssrgb\c12941\c14510\c16078;\cssrgb\c96863\c96863\c96863;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww35340\viewh22100\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\
+   _______________   NUMBERS SOLUTION USING PYTHON __________________\
+\
+\
+1) In a garage the service man takes 10 minutes to service one car.If there are N cars in garage and X is number of minutes after which one person arrives,Calculate how much time last person has to wait in garage.(Print answer in minutes)\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Input Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 You are given Two numbers \'91N\'92 and \'91X\'92\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Output Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 Waiting time of last person\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Input :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 4 5\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Output :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 15\
+\
+_______________________________\
+\
+x,y = map(int,input().split())\
+print((x-1)*10-(x-1)*y)\
+\
+_______________________________\
+\
+2) 
+\f0 you are given with \'91arasu\'92 series(shown in example).You have to understand it and you will be given a number \'91n\'92 ,you have to print the series till n numbers.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Input Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 You are given a number n;\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Output Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 Print series till nth number\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Input :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 4\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Output :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 2 5 10 17\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \
+_______________________________\
+\
+N = int(input())\
+x = [2]\
+y = 3\
+for i in range(1,N):\
+    a = x[i-1]+y \
+    x.append(a)\
+    y+=2\
+print(*x)\
+    \
+\
+\
+_______________________________\
+\
+\
+3) 
+\f0 \cf2 \cb3 You are an employee of \'91Rox Travel\'92 channel.The channel has decided to give allowances to some customer who satisfy these conditions. The conditions are:\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 The customer should be born on or before july 22 1987\cb1 \
+\cb3 The month of D.O.B month should be of 31 days.\cb1 \
+\cb3 You are given with the D.O.B of all the employees.Your task is to print the employee index who are having chance to avail special offer.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Input Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 First line contains the number of employee.Next line contains an array of D.O.B of employees\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Output Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 Print the employee index (index at 1). Print-1 if there are no such employee\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Input :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 Input\cb1 \
+\cb3 4\cb1 \
+\cb3 23 MARCH 1996 23 MARCH 1986 22 JULY 1987 23 APRIL 1987\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Output :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 2 3\
+\
+_________________________________\
+\
+def chunks(l, n = 3):\
+    for i in range(0, len(l), n):\
+        yield l[i: i+n]\
+a = int(input())\
+month_31 = ["JANUARY", "MARCH", "MAY", "JULY", "AUGUST", "OCTOBER", "DECEMBER"]\
+b = list(map(str,input().split()))\
+c = list(chunks(b))\
+for i in range(len(c)):\
+    c[i][1] = c[i][1].upper()\
+for i in range(len(c)):\
+    if (c[i][1] in month_31 and c[i][-1] <"1987"):\
+        c[i].insert(1,"#")\
+    if c[i][1] in month_31 and c[i][-1] == "1987":\
+        c[i].insert(1,"*")\
+ans = []\
+for i in range(len(c)):\
+    if "#" in c[i]:\
+        ans.append(i+1)\
+    elif "*" in c[i]:\
+        if c[i][2] in month_31[3] and int(c[i][0]) <= 22:\
+            ans.append(i+1)\
+        elif c[i][2] in month_31[:3]:\
+            ans.append(i+1)\
+print(*ans if ans != [] else "-1")\
+\
+______________________________\
+\
+4) 
+\f0 You are given with an array of numbers, Your task is to print the difference of indices of largest and smallest number.All number are unique.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Input Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 First line contains a number \'91n\'92. Then next line contains n space separated numbers.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Output Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 Print the difference of indices of largest and smallest array\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Input :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 5\cb1 \
+\cb3 1 6 4 0 3\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Output :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 -2\
+\
+_______________________________\
+\
+a = int(input())\
+arr = list(map(int,input().split()))\
+print(arr.index(max(arr))-arr.index(min(arr)))\
+\
+_______________________________\
+\
+5) 
+\f0 you are given with array of numbers.you have to find whether array is beautiful or not. A beautiful array is an array whose sum of all numbers is divisible by 2, 3 and 5\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Input Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 You are given a number \'91n\'92 denoting the size of array.Next line contains n space separated numbers.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Output Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 Print 1 if array is beautiful and 0 if it is not\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Input :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 5\cb1 \
+\cb3 5 25 35 -5 30\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Output :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 1\
+\
+____________________________\
+\
+a = int(input())\
+arr = list(map(int, input().split()))\
+if sum(arr) % 2 == 0 and sum(arr) % 5 == 0 and sum(arr) % 3 == 0:\
+    print(1)\
+else:\
+    print(0)\
+\
+______________________________\
+\
+6) 
+\f0 You are given a number \'91n\'92.Your task is to develop an algorithm to tell whether the number is \'91ajs\'92 or not.An \'91ajs\'92 number is a number whose sum of first two digits is present in given number \'91n\'92\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Input Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 A number \'92n\'92 is given to you\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Output Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 Print 1 if number is ajs or 0 if it is not\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Input :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 9817\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Output :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 1\
+\
+__________________________\
+\
+a = input()\
+n = int(a[0]) + int(a[1])\
+if str(n) in a:\
+    print(1)\
+else:\
+    print(0)\
+\
+_________________________\
+\
+7) 
+\f0 You are given an array of digits. Your task is to print the digit with maximum frequency.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Input Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 You are given length of array \'92n\'92,next line contains n space separated numbers.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Output Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 Print the number with maximum frequency. If two number have equal freqency prin the number that comes first\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Input :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 7\cb1 \
+\cb3 1 2 3 4 4 4 5\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Output :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 4\
+\
+________________________\
+\
+n = int(input())\
+test_list = list(map(int,input().split()))\
+m = 0\
+ans = test_list[0]\
+for i in test_list:\
+    r = test_list.count(i)\
+    if r > m:\
+        m = r\
+        ans = i\
+      \
+# printing result\
+print (ans)\
+\
+________________________\
+\
+8) 
+\f0 Rampal is a number in which the sum of last two digits of that number is multiple of 4.Your teacher has given you the task to make a list of rampal numbers.Your task is to tell whether the number is rampal or not.\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \'a0\cb1 \
+\cb3 Note : if the number is negative than rampal is a number which has sum of first and last digit as multiple of 4 \'a0\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Input Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 First line contains an input n\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Output Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 Print yes or no\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Input :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 20\cb1 \
+\
+________________________\
+\
+a = input()\
+n = len(a)\
+m = int(a)\
+r = 0\
+for i in a[n-2:]:\
+    r += int(i)\
+if r%4 == 0:\
+    print('yes')\
+else:\
+    print('no')\
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 ________________________\cf2 \
+\
+9) 
+\f0 \cb3 Ramesh is given a special series to print,as he has some other work to do.Help ramesh in printing the series.\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \'a0\cb1 \
+\cb3 Note:Observe the series very keenly in examples\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Input Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 You are given a number \'91n\'92.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Output Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 Print the n term of series.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Input :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 6\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Output :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 1 6 120\
+\
+_______________________\
+\
+a = int(input())\
+arr = list(range(1,a+1))\
+c = ['1']\
+d = int(len(arr)/3)\
+for i in range(d):\
+    r = 1\
+    for j in arr[(i*3):3+(i*3)]:\
+        r = r * j \
+    c.append(r)\
+print(*c)\
+\
+_______________________\
+\
+10) 
+\f0 You are given a number \'91n\'92. You have to tell whether a number is great or not. A great number is a number whose sum of digits let (m) and product of digits let(j) when summed together gives the number back\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 m+j=n\cb1 \
+\cb3 \'a0\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Input Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 You are given a number n;\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Output Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 Print Great if a number is great else print the no\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Input :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 59\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Output :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 Great\
+\
+_________________________\
+\
+n = int(input())\
+t = n\
+digit = 1\
+Sum = 0\
+product = 1\
+while(n>0):\
+    digit = n%10\
+    Sum += digit \
+    n = n//10 \
+    product = digit*product \
+A = Sum + product\
+if A == t:\
+    print('Great')\
+else:\
+    print('no')\
+    \
+_________________________\
+\
+11) 
+\f0 Assume that you are ticket verifier at a club. Your club has decided to give a special discount to the person(s) who are satisfying the following condition\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \'a0\cb1 \
+\cb3 Condition:-\cb1 \
+\cb3 If ticket number is divisible by date of month. You are eligible for a discount.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Input Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 First line contains input \'91n\'92.Next line contains n space separated numbers denoting ticket numbers .Next line contains \'91k\'92 date of the month.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Output Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 Print 1 if the ticket is eligible for discount else 0\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Input :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 6\cb1 \
+\cb3 112 139 165 175 262 130\cb1 \
+\cb3 22\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Output :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 0 0 0 0 0 0\
+\
+____________________________\
+\
+n = int(input())\
+a = list(map(int,input().split()))\
+b = int(input())\
+for i in range(0,n):\
+    if(a[i]%b == 0):\
+        a[i]=1\
+    else:\
+        a[i]=0\
+print(*a)\
+\
+____________________________\
+\
+12) 
+\f0 Rahul was learning about numbers in list. He came across one word ground of a number.\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 A ground of a number is defined as the number which is just smaller or equal to the number given to you.Hence he started solving some assignments related to it. He got struck in some questions. Your task is to help him.\cb1 \
+\cb3 \'a0\cb1 \
+\cb3 O(n) time complexity\cb1 \
+\cb3 O(n) Auxilary space\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Input Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 First line contains two numbers \'91n\'92 denoting number of integers and \'91k\'92 whose ground is to be check. Next line contains n space separated numbers.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Output Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 Print the index of val.Print -1 if equal or near exqual number\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Input :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 7 3\cb1 \
+\cb3 1 2 3 4 5 6 7\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Output :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 2\
+\
+__________________________\
+\
+a,k = map(int,input().split())\
+arr = list(map(int,input().split()))\
+lst = [i for i in arr if i <= k]\
+lst.sort(reverse = True)\
+print(arr.index(lst[0]))\
+\
+__________________________\
+\
+13) 
+\f0 Ramesh is given \'a0a task to generalise the array. An array is called generalise if median of that array is equal to sum \'91k\'92.Ramesh has less knowledge amongst median so he decided to take help from you.Your task is to count the number of elements that you must add to the median of given array equal to a number \'91k\'92.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Input Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 First line contains a number \'91n\'92.next line contains n space separated numbers.next line contains a number \'91k\'92\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Output Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 Print the count required in order to make the median of array equal to k\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Input :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 6 \cb1 \
+\cb3 10 20 30 100 150 200\cb1 \
+\cb3 30\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Output :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 1\
+\
+_________________________\
+\
+a = int(input())\
+arr = list(map(int,input().split()))\
+k = int(input())\
+num = a//2\
+c = 0\
+if k in arr and arr.index(k) == num-1:\
+    print(arr.count(k))\
+else:\
+    b = arr[num-1]\
+    print(5)\
+\
+_________________________\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0 \cf2 15) You are provided with a number \'92n\'92. Your task is to tell whether that number is saturated. A saturated number is a number which is made by exactly two digits.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Input Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 You are given with a number n.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Output Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 Print Saturated if it is saturated else it is Unsaturated\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Input :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 121\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Output :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 Saturated\
+\
+_________________________\
+\
+n = input().strip()\
+n = set(n)\
+if len(n) <= 2:\
+    print("Saturated")\
+else:\
+    print("Unsaturated")\
+\
+___________________________\
+\
+16) 
+\f0 You are given a very long integer.Your task is to determine the smallest possible number such that sum of factorial of digits results back in \'91n\'92. Print -1 if no number is possible\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Input Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 You are given a number \'91n\'92\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Output Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 Print the smallest number\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Input :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 145\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Output :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 145\
+\
+__________________________\
+\
+n = int(input())\
+s =''\
+while(True):\
+    k = 1\
+    i = 1\
+    while(k<=n):\
+        k = k*i \
+        i = i+1 \
+    k = k//(i-1)\
+    s = s+str(i-2)\
+    n= n-k\
+    if n == 0:\
+        break \
+print(s[::-1])\
+\
+__________________________\
+\
+17) 
+\f0 Prateek finds it difficult to judge the minimum element in the list of elements given to him. Your task is to develop the algorithm in order to find the minimum element.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Input Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 You are given \'91n\'92 number of elements. Next line contains n space separated numbers.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Output Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 Print the minimum element\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Input :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 5\cb1 \
+\cb3 3 4 9 1 6\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Output :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 1\
+\
+__________________________\
+\
+N = int(input())\
+Arr = list(map(int,input().split()))\
+print(min(Arr))\
+\
+__________________________\
+\
+18) 
+\f0 Dityan is alloted with a task. He is provided with some positive numbers. He has to tell the smallest positive natural number(greater than the minimum number present in the list) and in addition to it,the number should not be present in the list and it should not be equal to the sum of any combination of \'91n\'92 numbers present in the list.You have to develop a suitable program in order to find that number \'91m\'92.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Input Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 First line contains a number \'91n\'92 . next line contains \'91n\'92 space separated numbers.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Output Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 print the smallest positive number \'91m\'92.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Input :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 5\cb1 \
+\cb3 1 2 10 12 13\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Output :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 4\
+___________________________\
+\
+a = int(input())\
+arr = list(map(int, input().split()))\
+s = []\
+for i in range(a):\
+    for j in arr[:i]:\
+        #if arr[i] != j:\
+        s.append(arr[i]+j)\
+lst = list(range(1,10))\
+for i in lst:\
+    if i not in s and i not in arr and i > min(arr):\
+        print(i)\
+        break\
+___________________________\
+\
+19) 
+\f0 A \'91zx\'92 number is a number which is formed from the sum of 3 numbers ,and the three numbers are such that their hcf equal to 1.\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 You are given a number.You have to tell whether the number is \'91zx\'92 or not,if yes then print the three numbers else 0\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Input Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 You are given a number \'91n\'92\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Output Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 Print the three numbers if n is \'91zx\'92 number in ascending order else 0\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Input :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 7\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Output :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 2 3 2\
+_____________________________\
+\
+a = int(input())\
+prime = []\
+# Part 1\
+for i in range(2, a+1):\
+    for j in range(2, i):\
+        if i % j == 0:\
+            break \
+    else:\
+        prime.append(i)\
+ans = []\
+rem = []\
+s = 0\
+for i in prime:\
+    s += i \
+    if s <= a:\
+        ans.append(i)\
+    else:\
+        s -= i \
+        if abs(a-s) in prime:\
+            ans.append(abs(a-s))\
+            break \
+if len(ans) == 3:\
+    print(*ans)\
+else:\
+    ans = []\
+    for i in prime:\
+        x = i*3 \
+        if x == a:\
+            ans = [i for j in range(3)]\
+            break \
+    if len(ans) == 3:\
+        print(*ans)\
+    else:\
+        print(0)\
+\
+___________________________\
+\
+20) 
+\f0 Jack is fond of numbers. He has given an array.He has to find the maximum length of sub array such that sum of elements in that sub array gives output 0.He is in little trouble, help him in finding solution\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Input Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 You are given an integer \'91n\'92 denoting the number of elements in array.Next line contains n space separated integers\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Output Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 Print the max length of that array with sum 0 and print -1 if not possible\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Input :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 6\cb1 \
+\cb3 -4 3 1 0 0 6\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Output :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 5\
+\
+_________________________\
+\
+n = int(input())\
+arr = [int(x) for x in input().split()]\
+lst = []\
+for i in range(n):\
+    for j in range(i, n):\
+        a = []\
+        for k in range(i, j+1):\
+            a.append(arr[k])\
+        lst.append(a)\
+m = len(lst[0])\
+flag = False\
+for i in lst:\
+    if sum(i) == 0 and m < len(i):\
+        m = len(i)\
+        flag = True\
+if flag:\
+    print(m)\
+else:\
+    print(-1)\
+\
+________________________\
+\
+21) 
+\f0 You are given with a number \'91n\'92. You have to count the pair of two numbers a and b such that sum of two numbers are equal to n.\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \'a0\cb1 \
+\cb3 Note:Both numbers lie in range 1<=a,b<n\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Input Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 You are given a number \'91n\'92\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Output Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 Print the number of pairs satisfying above condition\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Input :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 5\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Output :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 4\
+\
+_________________________\
+\
+a = int(input())\
+count = 0\
+for i in range(1,a):\
+    for j in range(1,a):\
+        if i+j == a:\
+            count += 1\
+print(count)\
+\
+________________________\
+\
+22) 
+\f0 Rohan is teacher at \'93Sunsdfghpol\'94 academy about dfg numbers.Assume you are student of his coaching batch .He has given you some task.Your task is to print nth dfg \'a0number.A dfg number is a number whose prime factors are only 2,3 or 5.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Input Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 You are given a number \'91n\'92.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \cb3 Output Description:
+\f0\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 Print all the dfg numbers upto index \'91n\'92.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Input :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 2\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf2 \cb3 Sample Output :
+\f3\b0 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 1 2\
+\
+_______________________\
+\
+num = int(input())\
+arr = [1]\
+i = 0\
+while (len(arr) != num):\
+    i += 1\
+    if i%2 == 0 or i % 3 == 0 or i % 5 == 0:\
+        arr.append(i)\
+print(*arr)\
+\
+______________________\
+}
